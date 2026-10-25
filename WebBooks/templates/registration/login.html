@@ -1,0 +1,40 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+{% if form.errors %}
+    <p>your username, or password or both are wrong, get some better memory</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+        <p>you cant acces this page
+        enter the system wiyh different parameters</p>
+    {% else %}
+        <p>enter he system to see this page</p>
+    {% endif %}
+{% endif %}
+
+
+<form method="post" action="{% url 'login'  %}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>{{form.username.label_tag}}</td>
+            <td>{{form.username}}</td>
+        </tr>
+        <tr>
+            <td>{{form.password.label_tag}}</td>
+            <td>{{form.password}}</td>
+        </tr>
+
+    </table>
+    <input type="submit" value="sublit">
+    <input type="hidden" value="{{next}}" name="next">
+</form>
+
+<p><a href="{% url 'password_reset'%}"> forgot password</a></p>
+
+
+{% endblock %}
+
+

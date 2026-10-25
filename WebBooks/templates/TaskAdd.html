@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add a task</title>
+</head>
+<body>
+
+<h1>Add a task</h1>
+
+<form method="POST" action="/taskmanageradd/">
+    {% csrf_token %}
+    <p>
+        <label> name</label> <br>
+        <input type="text" name="name">
+
+    </p>
+    <p>
+        <label> description</label> <br>
+        <input type="text" name="description">
+
+    </p>
+    <p>
+        <label> due_date</label> <br>
+        <input type="date" name="due_date">
+
+    </p>
+    <p>
+        <select name="status">
+            {%for i in statuses%}
+                <option value="{{i.id}}">{{i.name}}</option>
+            {%endfor%}
+        </select>
+
+    </p>
+    <input type="submit" value="save">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+{% extends "base_generic.html" %}
+{% block content %}
+
+<h1>{{author.firstname}}</h1><h1>author.lastname</h1>
+
+<form method="POST" >
+
+    {% csrf_token %}
+    <p>
+        <label> edit firstname</label> <br>
+        <input type="text" name="firstname" value="{{author.firstname}}">
+
+    </p>
+    <p>
+        <label> edit lastname</label> <br>
+        <input type="text" name="lastname" value="{{author.lastname}}">
+
+    </p>
+    <p>
+        <label> edit date of birth</label> <br>
+        <input type="date" name="date_of_birth" value="{{author.date_of_birth}}">
+
+    </p>
+    <p>
+       <label> edit date of death</label> <br>
+        <input type="date" name="date_of_death" value="{{author.date_of_death}}">
+
+    </p>
+    <input type="submit" value="save">
+</form>
+{% endblock %}

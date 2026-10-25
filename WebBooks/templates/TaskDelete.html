@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delete da task</title>
+</head>
+<body>
+
+<form method="POST" action="/taskmanageradd/">
+    {% csrf_token %}
+
+    <input type="submit" value="delete"> <div><a href="{% url 'task'%}"></a></div>
+</form>
+
+</body>
+</html>

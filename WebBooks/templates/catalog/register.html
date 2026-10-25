@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<form method="post" action="">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>username</td>
+            <td><input type="text" name = 'username'></td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td><input type="email" name = 'email'></td>
+        </tr>
+
+    </table>
+    <input type="submit" value="register">
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do it. DO IIITT</title>
+</head>
+<body>
+
+<h1> DO YOUR TASK </h1>
+
+{% for task in tasks %}
+    <div>
+        <div>{{task.name}}, ({{task.status}})</div>
+        <div>{{task.description}}</div>
+        <div>{{task.due_date}}</div>
+        <div> <div><a href="{% url 'taskedit' task.id %}">Edit</a></div><div><a href="{% url 'taskdelete' task.id %}">Delete</a></div> </div>
+
+    </div>
+{% endfor%}
+
+<div> <a  href="{% url 'taskadd'%}">Add task</a></div>
+
+</body>
+</html>
