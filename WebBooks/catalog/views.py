@@ -21,7 +21,8 @@ class AuthorsListView(generic.ListView):
     paginate_by = 4
 
 
-
+def some():
+    pass
 
 
 class BookCreate(CreateView):
